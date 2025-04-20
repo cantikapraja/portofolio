@@ -200,29 +200,58 @@ p {
 
 /* Hero Section */
 #hero {
-  background-image: url(./img/hero-bg.png);
-  background-size: cover;
-  background-position: top center;
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
 }
-#hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
+
+.hero.container {
   width: 100%;
-  background-color: black;
-  opacity: 0.7;
-  z-index: -1;
-}
-#hero .hero {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 50px;
-  justify-content: flex-start;
 }
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.video-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+}
+
 #hero h1 {
   display: block;
   width: fit-content;
@@ -230,18 +259,23 @@ p {
   position: relative;
   color: transparent;
   animation: text_reveal 0.5s ease forwards;
-  animation-delay: 1s;
+  margin: 0;
+  line-height: 1.2;
 }
+
 #hero h1:nth-child(1) {
   animation-delay: 1s;
 }
+
 #hero h1:nth-child(2) {
   animation-delay: 2s;
 }
+
 #hero h1:nth-child(3) {
   animation: text_reveal_name 0.5s ease forwards;
   animation-delay: 3s;
 }
+
 #hero h1 span {
   position: absolute;
   top: 0;
@@ -250,19 +284,95 @@ p {
   width: 0;
   background-color: palevioletred;
   animation: text_reveal_box 1s ease;
-  animation-delay: 0.5s;
 }
+
 #hero h1:nth-child(1) span {
   animation-delay: 0.5s;
 }
+
 #hero h1:nth-child(2) span {
   animation-delay: 1.5s;
 }
+
 #hero h1:nth-child(3) span {
   animation-delay: 2.5s;
 }
 
-/* End Hero Section */
+/* CTA Button */
+.cta {
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 2rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 1s;
+}
+
+.cta:hover {
+  background: palevioletred;
+  color: white;
+  cursor: pointer;
+}
+
+.cta:active {
+  background: palevioletred;
+  color: white;
+  transform: scale(0.98);
+}
+
+/* Animations */
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes text_reveal_name {
+  100% {
+    color: palevioletred;
+    font-weight: 700;
+  }
+}
+
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .cta {
+    margin: 2rem 0 0 0;
+  }
+}
 
 /* Services Section */
 #services .services {
