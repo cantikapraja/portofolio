@@ -703,18 +703,48 @@ p {
 
 /* Media Query For Mobile */
 @media only screen and (max-width: 767px) {
+  /* Header brand text adjustment */
+  #header .brand h1 {
+    font-size: 1.8rem; /* Mengurangi ukuran font untuk mobile */
+    white-space: nowrap; /* Mencegah text wrapping */
+  }
+
   /* Footer text adjustment */
   #footer .brand h1 {
-    font-size: 2rem; /* Mengurangi ukuran font untuk mobile */
+    font-size: 2rem;
   }
 
   /* Recent Projects title adjustment */
   #projects .projects-header h1.section-title {
-    font-size: 3rem; /* Mengurangi ukuran font untuk mobile */
+    font-size: 3rem;
+  }
+
+  /* Contact icons adjustment */
+  #contact .contact-item {
+    flex-direction: column; /* Mengatur layout icon dan text menjadi vertikal */
+    padding: 15px; /* Mengurangi padding */
+  }
+
+  #contact .icon {
+    width: 50px; /* Mengurangi ukuran icon */
+    margin-bottom: 5px;
+  }
+
+  #contact .contact-info h1 {
+    font-size: 2rem; /* Mengurangi ukuran teks */
+  }
+
+  #contact .contact-info h2 {
+    font-size: 1.2rem; /* Mengurangi ukuran teks */
   }
 
   /* Optional: Adjust other elements if needed */
   .section-title {
-    font-size: 3rem; /* Ukuran default yang lebih kecil untuk mobile */
+    font-size: 3rem;
+  }
+
+  /* Nav-bar padding adjustment */
+  #header .nav-bar {
+    padding: 0 5px; /* Mengurangi padding di nav-bar */
   }
 }
