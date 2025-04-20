@@ -700,3 +700,21 @@ p {
     margin: 1.5%;
   }
 }
+
+/* Media Query For Mobile */
+@media only screen and (max-width: 767px) {
+  /* Footer text adjustment */
+  #footer .brand h1 {
+    font-size: 2rem; /* Mengurangi ukuran font untuk mobile */
+  }
+
+  /* Recent Projects title adjustment */
+  #projects .projects-header h1.section-title {
+    font-size: 3rem; /* Mengurangi ukuran font untuk mobile */
+  }
+
+  /* Optional: Adjust other elements if needed */
+  .section-title {
+    font-size: 3rem; /* Ukuran default yang lebih kecil untuk mobile */
+  }
+}
